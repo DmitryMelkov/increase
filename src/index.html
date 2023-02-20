@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{ "title": "Главная" })
+
+<body class="body">
+  @@include('html/header.html',{ })
+  <main>
+
+    <div class="container body-container">
+      <aside class="sidebar">
+        <div class="sidebar__inner">
+          <span class="sidebar__title">Создание сайтов</span>
+          <p class="sidebar__descr descr-reset">Изготовление сайтов «под ключ»
+            Как мы работаем
+            Интеграция с amoCrm
+            Поддержка сайтов
+            Создание сайтов на
+            Wordpress
+            Дизайн сайтов
+            Редизайн сайтов
+            Интернет-магазины
+            Создание логотипов
+            FAQ</p>
+        </div>
+      </aside>
+      <div class="intro">
+        <div class="intro__inner">
+          <div class="intro__sidebar">
+            <span class="intro__sidebar-span">Открыть SideBar</span>
+            <button class="intro__sidebar-btn intro__sidebar-btn-open btn-reset">
+              <svg class="intro__sidebar-btn-svg">
+                <use xlink:href="img/icons/icons.svg#burger-open"></use>
+              </svg>
+            </button>
+            <button class="intro__sidebar-btn intro__sidebar-btn-close btn-reset">
+              <svg class="intro__sidebar-btn-svg">
+                <use xlink:href="img/icons/icons.svg#burger-close"></use>
+              </svg>
+            </button>
+          </div>
+          <h2 class="intro__title title-reset">PSD файл с макетом. Макет разбит по слоям и сгрупированн по папкам: </h2>
+          <ul class="intro__list">
+            <li class="intro__list-item">number - нумерация блоков (номера блоков верстать не нужно)</li>
+            <li class="intro__list-item"> text - текстовые блоки (шрифт Arial, размер 14 пикселей, межстрочное растояние
+              22 пикселя)</li>
+            <li class="intro__list-item"> head - шапка сайта</li>
+            <li class="intro__list-item"> content - контентная область, которая в свою очередь делится на left и center
+            </li>
+          </ul>
+          <span class="intro__list-span">Текстовое описание задания и требования.</span>
+        </div>
+        <div class="intro__content">
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+          <div class="intro__content-item"></div>
+        </div>
+        <div class="intro__blocks">
+          <div class="intro__block">
+            <p class="intro__block-descr descr-reset">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem
+              neque, reprehenderit veritatis explicabo
+              corrupti exercitationem aperiam, quia voluptatum quaerat repudiandae ducimus nobis sunt facere beatae
+              libero natus quod culpa qui.</p>
+          </div>
+          <div class="intro__block">
+            <p class="intro__block-descr descr-reset">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem
+              neque, reprehenderit veritatis explicabo
+              corrupti exercitationem aperiam, quia voluptatum quaerat repudiandae ducimus nobis sunt facere beatae
+              libero natus quod culpa qui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </main>
+  @@include('html/footer.html',{ })
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>

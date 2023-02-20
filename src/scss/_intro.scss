@@ -1,0 +1,157 @@
+@import "_variables";
+@import "_mixins";
+
+.body-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sidebar {
+  &__inner {
+    padding: 15px;
+    width: 183px;
+    background-color: $colorGrey;
+  }
+  &__title {
+    display: block;
+    margin-bottom: 20px;
+    @include text(14px, 22px, 700, $colorWhite);
+  }
+  &__descr {
+    @include text(14px, 22px, 400, $colorWhite);
+  }
+}
+
+.intro {
+  &__inner {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: $gainsboro;
+  }
+  &__title {
+    @include text(14px, 22px, 700, $colorGrey);
+  }
+  &__list {
+    list-style-type: circle;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+  }
+  &__list-item,
+  &__list-span {
+    @include text(14px, 22px, 400, $colorGrey);
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(10, 2fr);
+    gap: 20px;
+  }
+  &__content-item {
+    grid-column: span 2;
+    width: 100%;
+    min-height: 150px;
+    background-color: $gainsboro;
+  }
+  &__blocks {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+  }
+  &__block {
+    background-color: $gainsboro;
+    padding: 15px;
+    min-height: 200px;
+  }
+  &__block-descr {
+    @include text(14px, 22px, 400, $colorGrey);
+  }
+  &__sidebar {
+    display: none;
+  }
+  &__sidebar-btn-svg {
+    @include svg-icon(20px, 20px, $colorGrey);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-100%);
+    @include transition((opacity, transform), 0.3s, ease-in-out);
+    &__inner {
+      box-shadow: 0 0px 5px 5px rgb(15 15 15 / 50%);
+    }
+  }
+  .sidebar.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .intro {
+    width: 100%;
+    &__sidebar {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: relative;
+      display: block;
+      text-align: right;
+    }
+    &__sidebar-btn {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      z-index: 1;
+      @include transition((opacity, transform), 0.3s, ease-in-out);
+    }
+    &__sidebar-btn-open {
+      opacity: 1;
+    }
+    &__sidebar-btn-open.active {
+      opacity: 0;
+    }
+    &__sidebar-btn-close {
+      opacity: 0;
+      transform: translateY(-1000px);
+    }
+    &__sidebar-btn-close.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &__sidebar-span {
+      display: block;
+      padding-right: 50px;
+    }
+    &__content {
+      grid-template-columns: repeat(12, 3fr);
+    }
+    &__content-item {
+      grid-column: span 3;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .intro {
+    width: 100%;
+    &__sidebar {
+      display: block;
+    }
+    &__content {
+      grid-template-columns: repeat(12, 3fr);
+    }
+    &__content-item {
+      grid-column: span 6;
+    }
+    &__blocks {
+      flex-direction: column;
+    }
+  }
+}
